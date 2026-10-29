@@ -22,6 +22,12 @@ Open http://localhost:5173 in Chrome or Edge (MP4 export uses WebCodecs).
 
 **Save .viz** stores the audio analysis so long tracks don't need to be re-analyzed.
 
+## Deploy
+
+`npm run build` outputs a static site in `dist/`, built to be served from
+`musiciate.com/soniceye/` (set by `base` in [vite.config.ts](vite.config.ts)). Serve the
+contents of `dist/` at that path; there is no backend. The dev server still runs at `/`.
+
 ## Layout
 
 ```
