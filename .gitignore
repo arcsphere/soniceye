@@ -1,2 +1,30 @@
+# dependencies and build output
 node_modules
 dist
+dist-ssr
+*.local
+
+# environment files and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.crt
+.npmrc
+
+# logs
+*.log
+npm-debug.log*
+
+# editor, OS and tool folders
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+.idea
+
+# deployment tooling
+.vercel
+.netlify
