@@ -28,6 +28,9 @@ Open http://localhost:5173 in Chrome or Edge (MP4 export uses WebCodecs).
 `musiciate.com/soniceye/` (set by `base` in [vite.config.ts](vite.config.ts)). Serve the
 contents of `dist/` at that path; there is no backend. The dev server still runs at `/`.
 
+On Vercel, [vercel.json](vercel.json) maps `/soniceye/*` to the build root, so the
+deployment works whether musiciate's rewrite keeps or strips the `/soniceye` prefix.
+
 ## Layout
 
 ```
