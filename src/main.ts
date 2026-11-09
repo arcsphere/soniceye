@@ -242,7 +242,7 @@ async function loadDemo() {
   }
   if (isPlaceholderTitle()) {
     state.tpl.text.title = 'Demo Loop';
-    state.tpl.text.artist = 'Visualizer';
+    state.tpl.text.artist = 'SonicEye';
   }
   await runAnalysis(buffer);
   afterMediaChange();
@@ -293,7 +293,7 @@ stage.addEventListener('drop', (e) => {
 
 // ---- export ----------------------------------------------------------------
 
-const slug = (s: string) => s.trim().replace(/[^\w-]+/g, '-').replace(/^-|-$/g, '') || 'visualizer';
+const slug = (s: string) => s.trim().replace(/[^\w-]+/g, '-').replace(/^-|-$/g, '') || 'soniceye';
 const exportUi = { range: 'full', bitrate: '8000000' };
 let exportProgress: HTMLProgressElement | null = null;
 let exportLabel: HTMLElement | null = null;

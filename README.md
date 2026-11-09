@@ -1,4 +1,4 @@
-# Visualizer
+# SonicEye
 
 Make YouTube-ready MP4s from a background (image, looping video, color, or blurred
 cover art), an audio track, and an audio-reactive visualizer. See [PLAN.md](PLAN.md).

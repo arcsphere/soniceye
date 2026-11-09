@@ -1,4 +1,4 @@
-# Visualizer — Plan
+# SonicEye — Plan
 
 A personal browser app for making YouTube-ready MP4s:
 **background + audio track + stylish audio-reactive visualizer**.
