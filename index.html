@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SonicEye</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -28,8 +29,32 @@
         </div>
         <div id="status"></div>
       </main>
-      <aside id="panel"></aside>
+      <aside id="side">
+        <header id="brand">
+          <span class="logo">SonicEye</span>
+          <button id="help-btn" class="btn" type="button" title="Help">? Help</button>
+        </header>
+        <div id="panel"></div>
+      </aside>
     </div>
+    <dialog id="help">
+      <form method="dialog" class="help-close"><button class="btn" aria-label="Close">✕</button></form>
+      <h2>How to use SonicEye</h2>
+      <ol>
+        <li><strong>Try the demo.</strong> A demo track is already loaded. Press <kbd>▶</kbd> or <kbd>Space</kbd> to preview it.</li>
+        <li><strong>Add your track.</strong> In <em>Media</em>, choose an audio file (mp3, wav, m4a), or drag it onto the preview.</li>
+        <li><strong>Add visuals.</strong> Optionally add a background (image or looping video), cover art and a logo. Drag-and-drop works: video goes to the background, an image to the cover art.</li>
+        <li><strong>Pick a look.</strong> In <em>Template</em>, choose a preset and an aspect ratio: 16:9 for YouTube, 9:16 for Shorts, 1:1 for square posts. Then tweak the visualizer, text and progress bar.</li>
+        <li><strong>Export.</strong> In <em>Export MP4</em>, render the first 10 s to check the look, then export the full track. The MP4 downloads when it's done.</li>
+      </ol>
+      <h3>Good to know</h3>
+      <ul>
+        <li>Your files never leave your computer. Everything is analyzed and rendered in your browser.</li>
+        <li>Your template settings are saved in this browser. Use <em>Save template</em> to keep a copy as a file.</li>
+        <li><em>Save .viz</em> stores a track's analysis, so long tracks load faster next time.</li>
+        <li>MP4 export needs a recent Chrome or Edge.</li>
+      </ul>
+    </dialog>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

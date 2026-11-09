@@ -40,6 +40,15 @@ const seekBar = document.querySelector<HTMLInputElement>('#seek')!;
 const timeLabel = document.querySelector<HTMLElement>('#time')!;
 const statusEl = document.querySelector<HTMLElement>('#status')!;
 const emptyHint = document.querySelector<HTMLElement>('#empty')!;
+const helpDialog = document.querySelector<HTMLDialogElement>('#help')!;
+
+document.querySelector('#help-btn')!.addEventListener('click', () => helpDialog.showModal());
+// click on the backdrop closes the help popup
+helpDialog.addEventListener('click', (e) => {
+  if (e.target !== helpDialog) return;
+  const r = helpDialog.getBoundingClientRect();
+  if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) helpDialog.close();
+});
 
 function setStatus(msg: string) {
   statusEl.textContent = msg;
@@ -97,6 +106,7 @@ playBtn.addEventListener('click', () => (isPlaying() ? pause() : play()));
 seekBar.addEventListener('input', () => seekTo((Number(seekBar.value) / 1000) * duration()));
 document.addEventListener('keydown', (e) => {
   const tag = (e.target as HTMLElement).tagName;
+  if (helpDialog.open) return;
   if (e.code === 'Space' && tag !== 'INPUT' && tag !== 'SELECT' && tag !== 'TEXTAREA') {
     e.preventDefault();
     if (isPlaying()) pause();
@@ -559,3 +569,7 @@ applyAspect();
 buildPanel();
 void document.fonts.ready.then(() => (dirty = true));
 requestAnimationFrame(tick);
+// preload the demo so first-time visitors can press play right away
+void loadDemo().then(() => {
+  if (state.names.audio === 'demo loop (synth)') setStatus('Demo ready. Press ▶ to play, or drop in your own track.');
+});
